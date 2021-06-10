@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "fufutry"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -13,7 +13,7 @@ library(flexdashboard)
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### How family income effects the oppurtunity of getting into NTU
 
 ```{r}
 library(readxl)
@@ -27,21 +27,6 @@ f <- ggplot(data = dataset) +
         geom_bar(mapping = aes(x = year, y = ntu, fill = income), stat = "identity")+
         scale_fill_manual(values=c("#D2E9FF", "#ECF5FF", "#FFF4C1", "#FFE66F", "#FFD306"))
 ggplotly(f)
-
-```
-
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Chart B
-
-```{r}
-
-```
-
-### Chart C
-
-```{r}
 
 ```
 
