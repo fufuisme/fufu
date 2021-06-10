@@ -16,6 +16,17 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
+library(readxl)
+library(ggplot2)
+library(plotly)
+library(plyr)
+
+dataset <- read_excel("C:/Users/Irene/Desktop/畫圖.xlsx")
+
+f <- ggplot(data = dataset) +
+        geom_bar(mapping = aes(x = year, y = ntu, fill = income), stat = "identity")+
+        scale_fill_manual(values=c("#D2E9FF", "#ECF5FF", "#FFF4C1", "#FFE66F", "#FFD306"))
+ggplotly(f)
 
 ```
 
