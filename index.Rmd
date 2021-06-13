@@ -16,16 +16,24 @@ Column {data-width=650}
 ### How family income effects the oppurtunity of getting into NTU
 
 ```{r}
+# 所需套件
 library(readxl)
 library(ggplot2)
 library(plotly)
 library(plyr)
 
+# 匯入數據資料
 dataset <- read_excel("C:/Users/Irene/Desktop/畫圖.xlsx")
 
+# 繪圖
+# 以X軸為觀察年度、y軸為台大學生占比，使用geom_bar繪製長條圖
+# 並依據家庭所得在台之排名(百分比)呈現不同顏色
+# 運用scale_fill_manual使用色碼表之顏色代碼自行搭配圖表色彩
 f <- ggplot(data = dataset) +
         geom_bar(mapping = aes(x = year, y = ntu, fill = income), stat = "identity")+
         scale_fill_manual(values=c("#D2E9FF", "#ECF5FF", "#FFF4C1", "#FFE66F", "#FFD306"))
+
+# 呈現
 ggplotly(f)
 
 ```
